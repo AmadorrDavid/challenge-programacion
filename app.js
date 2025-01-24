@@ -4,10 +4,37 @@ let almacenNombre = [];
 let contador = 0;
 
 
+function agregarAmigo(){
+    let entradaAmigo = document.querySelector("#amigo").value;
+    for (let index = 0; index < almacenNombre.length; index++) {
+        if (entradaAmigo === almacenNombre[index]) {
+            alert("Este amigo ya esta en la lista...");
+            break;
+        }
+    }
+    actualizarAmigo();
+}
 
-function agregarAmigo(params){
-    
 
+
+function sortearAmigo() {
+
+    let nombreSorteado = Math.floor(Math.random()* contador);
+    console.log(nombreSorteado)
+    let nombre = almacenNombre[nombreSorteado];
+
+    if (isNaN(entradaAmigo)) {
+        alert("No puedes soltear sin agregar un nombre en el cuadro de texto...")
+    }
+
+    else{
+    editarEtiquetas("h2", `Tu amigo secreto es: ${nombre}`); 
+    }
+}
+
+
+
+function actualizarAmigo() {
     editarEtiquetas("h2", "Digite el nombre de sus amigos");
     let entradaAmigo = document.querySelector("#amigo").value;
 
@@ -22,17 +49,6 @@ function agregarAmigo(params){
     else{
         alert("No puedes dejar el cuadro vacio...")
     }
-
-}
-
-
-
-function sortearAmigo(arreglo) {
-
-    let nombreSorteado = Math.floor(Math.random()* contador);
-
-    let nombre = almacenNombre[nombreSorteado];
-    editarEtiquetas("h2", `Tu amigo secreto es: ${nombre}`); 
 }
 
 
