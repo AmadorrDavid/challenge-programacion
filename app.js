@@ -30,7 +30,7 @@ function actualizarAmigo() {
 
     if (entradaAmigo != "") {  
         while (contador >= 0) {
-            almacenNombre[contador] = " " + entradaAmigo ; //Almacen de Nombres
+            almacenNombre[contador] =entradaAmigo ; //Almacen de Nombres
             vaciarElementos();
             alert("Se ha agregado el nombre correctamente");
             editarEtiquetas("h3", `Amigos Agregados: ${almacenNombre}`)
