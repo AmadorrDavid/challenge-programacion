@@ -5,31 +5,21 @@ let contador = 0;
 
 
 function agregarAmigo(){
-    let entradaAmigo = document.querySelector("#amigo").value;
-    for (let index = 0; index < almacenNombre.length; index++) {
-        if (entradaAmigo === almacenNombre[index]) {
-            alert("Este amigo ya esta en la lista...");
-            break;
-        }
-    }
-    actualizarAmigo();
+    let Amigos = document.querySelector("#amigo").value; 
+    almacenNombre.includes(Amigos) ?  alert("Ya este amigo esta agregado...") : actualizarAmigo();
+    if (contador >= 2) {
+        document.getElementById("buttonSortear").removeAttribute("disabled");
+    } 
 }
 
 
 
 function sortearAmigo() {
-
     let nombreSorteado = Math.floor(Math.random()* contador);
-    console.log(nombreSorteado)
     let nombre = almacenNombre[nombreSorteado];
-
-    if (isNaN(entradaAmigo)) {
-        alert("No puedes soltear sin agregar un nombre en el cuadro de texto...")
-    }
-
-    else{
     editarEtiquetas("h2", `Tu amigo secreto es: ${nombre}`); 
-    }
+    document.getElementById("buttonSortear").setAttribute("disabled", true);
+
 }
 
 
@@ -40,8 +30,10 @@ function actualizarAmigo() {
 
     if (entradaAmigo != "") {  
         while (contador >= 0) {
-            almacenNombre[contador] = entradaAmigo;
-            alert("Se ha agregado el nombre correctamente");  
+            almacenNombre[contador] = " " + entradaAmigo ; //Almacen de Nombres
+            vaciarElementos();
+            alert("Se ha agregado el nombre correctamente");
+            editarEtiquetas("h3", `Amigos Agregados: ${almacenNombre}`)
             contador++;
             break;
         }
@@ -56,3 +48,9 @@ function editarEtiquetas(etiqueta, texto) {
     let recibirEtiqueta = document.querySelector(etiqueta);
     recibirEtiqueta.innerHTML = texto;
 }
+
+function vaciarElementos() {
+    let vaciarElementos = document.querySelector("#amigo");
+    vaciarElementos.value = "";
+}
+

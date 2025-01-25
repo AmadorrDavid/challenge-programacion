@@ -160,3 +160,11 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.colorH3 { 
+    font-family: 'Segoe UI';
+    color: #07c154;
+    font-size: 17px;
+    align-items: center;
+
+}
