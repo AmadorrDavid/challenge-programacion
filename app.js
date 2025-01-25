@@ -10,6 +10,7 @@ function agregarAmigo(){
     if (contador >= 2) {
         document.getElementById("buttonSortear").removeAttribute("disabled");
     } 
+    vaciarElementos();
 }
 
 
@@ -34,7 +35,6 @@ function actualizarAmigo() {
     if (entradaAmigo != "") {  
         while (contador >= 0) {
             almacenNombre[contador] =entradaAmigo ; //Almacen de Nombres
-            vaciarElementos();
             alert("Se ha agregado el nombre correctamente");
             editarEtiquetas("h4", `${almacenNombre}`)
             contador++;
