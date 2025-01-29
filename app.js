@@ -3,7 +3,6 @@
 let almacenNombre = [];
 let contador = 0;
 
-
 function agregarAmigo(){
     let Amigos = document.querySelector("#amigo").value; 
     almacenNombre.includes(Amigos.toLowerCase()) ?  alert("Ya este amigo esta agregado...") : actualizarAmigo();
@@ -12,9 +11,6 @@ function agregarAmigo(){
     } 
     vaciarElementos();
 }
-
-
-
 function sortearAmigo() {
     let nombreSorteado = Math.floor(Math.random()* contador);
     let nombre = almacenNombre[nombreSorteado];
@@ -22,10 +18,6 @@ function sortearAmigo() {
     document.getElementById("buttonSortear").setAttribute("disabled", true);
 
 }
-
-
-
-
 
 function actualizarAmigo() {
     editarEtiquetas("h2", "Digite el nombre de sus amigos");
@@ -46,7 +38,6 @@ function actualizarAmigo() {
     }
 }
 
-
 function editarEtiquetas(etiqueta, texto) {
     let recibirEtiqueta = document.querySelector(etiqueta);
     recibirEtiqueta.innerHTML = texto;
@@ -56,4 +47,6 @@ function vaciarElementos() {
     let vaciarElementos = document.querySelector("#amigo");
     vaciarElementos.value = "";
 }
+
+//Soy David - PeaceisConsumingMe
 
